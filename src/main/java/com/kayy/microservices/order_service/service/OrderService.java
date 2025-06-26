@@ -6,6 +6,9 @@ import com.kayy.microservices.order_service.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -15,7 +18,7 @@ public class OrderService {
     private final OrderRepository orderRepository;
 
     public void placeOrder(OrderRequest orderRequest){
-        //map order request ot order object
+        //map order request to order object
         Order order = new Order();
         order.setOrderNumber(UUID.randomUUID().toString());
         order.setPrice(orderRequest.price());

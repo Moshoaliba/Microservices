@@ -21,9 +21,17 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String orderNumber;
+    @Column(name = "sku_code") // Explicitly map 'skuCode' Java field to 'sku_code' DB column
     private String skuCode;
+
+    @Column(name = "price") // Explicitly map 'price' Java field to 'price' DB column
     private BigDecimal price;
+
+    @Column(name = "quantity") // Explicitly map 'quantity' Java field to 'quantity' DB column
     private Integer quantity;
+//    private String skuCode;
+//    private BigDecimal price;
+//    private Integer quantity;
 
 
 }
